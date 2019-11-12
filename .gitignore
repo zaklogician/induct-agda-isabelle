@@ -1,0 +1,6 @@
+*.thy#
+*.thy~
+*.agda~
+*.agdai
+extern/*
+output/*
