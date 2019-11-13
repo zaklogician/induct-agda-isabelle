@@ -27,7 +27,7 @@ downset-zero zero d-phi-y = d-phi-y
 downset-zero (suc y) d-phi-y = downset-zero y (downset-pred d-phi-y)
 
 downset-downward-closed : ∀ {φ} → ∀ x y → downset φ y → x ≤ y → downset φ x
-downset-downward-closed zero y d-phi-y x-leq-y = downset-zero y d-phi-y
+downset-downward-closed 0 y d-phi-y x-leq-y = downset-zero y d-phi-y
 downset-downward-closed
   (suc x) (suc y) d-phi-y (s≤s x-leq-y) with lemma-larger x y x-leq-y
 ... | inj₁ sx-leq-y = downset-downward-closed (suc x) y (downset-pred d-phi-y) sx-leq-y
