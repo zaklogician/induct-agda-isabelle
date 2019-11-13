@@ -16,8 +16,8 @@ downset-downset (downset-pred p) = downset-pred (downset-downset p)
 
 {- Example 2: Downsets are downward closed. Needs lemmata. -}
 lemma-larger : ∀ x y → x ≤ y → (suc x ≤ y) ⊎ (x ≡ y)
-lemma-larger .0 zero z≤n = inj₂ refl
-lemma-larger .0 (suc y) z≤n = inj₁ (s≤s z≤n)
+lemma-larger 0 0 z≤n = inj₂ refl
+lemma-larger 0 (suc y) z≤n = inj₁ (s≤s z≤n)
 lemma-larger (suc x) (suc y) (s≤s x-leq-y) with lemma-larger x y x-leq-y
 lemma-larger (suc x) (suc y) (s≤s x-leq-y) | inj₁ sx-leq-y = inj₁ (s≤s sx-leq-y)
 lemma-larger (suc x) (suc y) (s≤s x-leq-y) | inj₂ x-eq-y = inj₂ (cong suc x-eq-y)
